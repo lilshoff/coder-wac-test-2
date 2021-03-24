@@ -6,7 +6,7 @@ workspace:
     image: ubuntu
     container-based-vm: false
     cpu: 1
-    memory: 1.1
+    memory: 1.0
     disk: 16
   configure:
     start:
