@@ -3,7 +3,7 @@ workspace:
   name: "remote-wac-template"
   type: "kubernetes"
   spec:
-    image: ubuntu
+    image: centos
     container-based-vm: false
     cpu: 1
     memory: 1.3
