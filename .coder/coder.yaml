@@ -1,6 +1,5 @@
 version: 0.0
 workspace:
-  name: "remote-wac-template"
   type: "kubernetes"
   spec:
     image: ubuntu
