@@ -13,7 +13,7 @@ workspace:
                 value: false
             cpu:
                 policy: read
-                value: 3 
+                value: 7 
             disk:
                 policy: read
                 value: 16
