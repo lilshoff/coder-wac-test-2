@@ -1,35 +1,33 @@
-version: 0.0
+version: "0.2"
 workspace:
-  type: "kubernetes"
-  spec:
-    image: ubuntu
-    container-based-vm: false
-    cpu: 2
-    memory: 1.3
-    disk: 32
-  configure:
-    start:
-      - name: Create directory /tmp/test1/test2
-        command: mkdir -p /tmp/test1/test2
-      - name: Test multi-line command
-        command: |
-          touch create-this.txt
-          touch create-that.txt
-        directory: /tmp
-      - name: Create textfile (test directory spec)
-        command: touch test3.txt
-        directory: /tmp/test1/test2
-      - name: Create textfile in home directory (test default to home directory)
-        command: touch home-dir.txt
-      - name: Write environment var to file (test env spec)
-        command: echo $TESTENV > this-should-say-hello.txt
-        env:
-          TESTENV: hello
-        directory: /tmp
-      - name: Create directories (test command w args)
-        command: mkdir -p /tmp/one/two/three/four/five
-        directory: /tmp
-      - name: Write environment var to file (test parsing bool from map)
-        command: if $THIS_IS_TRUE; then echo true > out.txt; else echo false > out.txt; fi
-        env:
-          THIS_IS_TRUE: true
+    configure:
+        start:
+            policy: write
+    dev-urls:
+        policy: write
+    specs:
+        kubernetes:
+            container-based-vm:
+                policy: write
+                value: false
+            cpu:
+                policy: read
+                value: 3
+            disk:
+                policy: read
+                value: 12
+            env:
+                policy: read
+            gpu-count:
+                policy: write
+                value: 0
+            image:
+                policy: write
+                value: index.docker.io/library/ubuntu
+            labels:
+                policy: read
+            memory:
+                policy: read
+                value: 2
+            tolerations:
+                policy: read
