@@ -13,10 +13,10 @@ workspace:
                 value: false
             cpu:
                 policy: read
-                value: 7
+                value: 3 
             disk:
                 policy: read
-                value: 22
+                value: 12
             env:
                 policy: read
             gpu-count:
