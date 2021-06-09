@@ -13,7 +13,7 @@ workspace:
                 value: false
             cpu:
                 policy: read
-                value: 7 
+                value: 8
             disk:
                 policy: read
                 value: 16
@@ -29,6 +29,6 @@ workspace:
                 policy: read
             memory:
                 policy: read
-                value: 2
+                value: 4
             tolerations:
                 policy: read
